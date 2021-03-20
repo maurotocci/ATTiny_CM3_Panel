@@ -9,7 +9,7 @@ All information on the operating status of the microprocessor board is sent thro
 
 An RGB LED on the board, connected to the pins of the microcontroller, indicates the state of charge of the supecapacitor.
 
-# Examples programming ATTiny microcontroller from command line ( Raspbian OS )
+## Examples programming ATTiny microcontroller from command line ( Raspbian OS )
 
 Required install avrdude
 
