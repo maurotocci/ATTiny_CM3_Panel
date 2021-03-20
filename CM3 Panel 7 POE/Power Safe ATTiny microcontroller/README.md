@@ -1,4 +1,4 @@
-# Industrial computer module display
+# CM3 Panel 7 POE - Industrial computer module display
 
 https://www.acmesystems.it/CM3-PANEL-7-POE
 
