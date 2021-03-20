@@ -1,4 +1,4 @@
-# CM3 Panel 7 POE - Industrial computer module display
+# CM3 Panel 7 POE - ACME Systems Industrial computer module display
 
 https://www.acmesystems.it/CM3-PANEL-7-POE
 
@@ -34,6 +34,7 @@ The Power Safe function is managed through an ATTiny microcontroller. The latter
 In addition to these measurements, it communicates with the microprocessor through other lines to monitor the following situations and more precisely:
 
 Operating system started regularly.
+
 Shutdown performed regularly.
 
 The microcontroller also manages the stage of the display power supply circuit. This will allow you to use the card as well without connecting the touch display.
@@ -72,13 +73,13 @@ indicating the state of charge of the Supercap, once charged, the board will tur
 ## Development and test environment mode.
 
 
-The board has 2 JUMPERS, JPROG BYPASS and one near the supercap with 2 positions, CHG (supercap connected) and DCHG (download
-supercap).
-In the development, test environment, the Power Safe control can be disabled as follows:
-Remove the supercap JUMPER, insert the jumper on JPROG BYPASS and power the board. The same, it will leave immediately
-without carrying out automatic shutdown in the event of a power failure. However, the microcontroller continues to manage the circuit
-power supply of the display and if it is not present, turn off the relative power supply.
+The board has 2 JUMPERS, JPROG BYPASS and one near the supercap with 2 positions, CHG (supercap connected) and DCHG (discharge supercap).
 
+In the development, test environment, the Power Safe control can be disabled as follows:
+
+Remove the supercap JUMPER, insert the jumper on JPROG BYPASS and power the board.
+
+The same, it will leave immediately without carrying out automatic shutdown in the event of a power failure. However, the microcontroller continues to manage the circuit power supply of the display and if it is not present, turn off the relative power supply.
 
 ## Power Safe mode ACTIVE.
 
@@ -122,6 +123,12 @@ When the board is turned on and the P2 button is pressed, it automatically turns
 
 On the expansion connector of the board, EXP2, through a TTL 3V3 serial USB adapter, the microcontroller transmits all
 information of all monitored lines.
+
+### Notes
+
+The tests performed in the ACME Systems laboratories were performed on the 2020-12-02-raspios-buster-armhf-lite operating system version with Node Red, XORG and Google Chrome installed. In the Desktop version, the board demonstrated faster shutdown times than in the Lite version.
+
+From the project calculations, and from the stress tests performed, the use of a 30 F supercap guarantees that even when there is a power failure during boot, the mocrocontroller is able to perform the automatic shutdown of the board regularly.
 
 ### The serial communication parameters are as follows:
 Speed           : 115200 baudrate
