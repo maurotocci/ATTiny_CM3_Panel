@@ -27,4 +27,45 @@ $ sudo avrdude -Cavrdude.conf -v -pattiny88 -cusbtiny -e -Uefuse:w:0xfe:m -Uhfus
 ## Programming PowerSafe with USB0 serial port adapter
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D -Uflash:w:CM3POE7_12.9.hex:i
 
+# Description firmware 12.9 functions
+
+The Power Safe function is managed through an ATTiny microcontroller. The latter communicates with the microprocessor via GPIO lines CM3. The micro takes measurements of all power stages of the CME Panel 7 at 1 second intervals to ensure through the supercap the correct shutdown of the board in the event of a power failure.
+
+In addition to these measurements, it communicates with the microprocessor through other lines to monitor the following situations and more precisely:
+
+Operating system started regularly.
+Shutdown performed regularly.
+
+The microcontroller also manages the stage of the display power supply circuit. This will allow you to use the card as well without connecting the touch display.
+
+Other 3 lines of the microcontroller are used in the following way:
+Real Time Clock interrupt, for switching on the board in MANUAL at a predetermined time (Power Safe Active).
+Touch screen interrupt for MANUAL ignition (Power Safe Active).
+P2 button, for manual switching on / off of the card (Power Safe Active).
+
+An RGB LED on the board, connected to the microcontroller, indicates the following operating modes through colors:
+Supercap charge level.
+MANUAL / AUTOMATIC operating mode.
+Do not press the reset button of the microcontroller while the board is running.
+
+The firmware on the microcontroller was set as follows:
+
+## Changing the AUTOMATIC / MANUAL operating mode:
+
+JUMPER JPROG BYPASS = OPEN
+JUMPER Supercap in CHG position
+
+## The board must be off and the RGB LED must NOT flash.
+Press and hold the P2 button and power up the card. The LED will emit a RED light for a few seconds, release the button P2. This situation will indicate that the card operating mode will be in MANUAL. The RGB led will start blinking indicating the state of charge of the Supercap, once charged, the board must be switched on manually as follows indicated.
+
+JUMPER JPROG BYPASS = OPEN
+JUMPER Supercap in CHG position
+
+To switch to AUTOMATIC mode instead, the board must always be off and the RGB LED must NOT flash.
+Press and hold the P2 button and power up the card. The LED will emit a GREEN light for a few seconds, release the button
+P2. This situation will indicate that the card operating mode will be in AUTOMATIC. The RGB led will start blinking
+indicating the state of charge of the Supercap, once charged, the card will turn on automatically.
+
+
+
 
