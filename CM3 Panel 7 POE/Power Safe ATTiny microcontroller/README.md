@@ -11,7 +11,7 @@ An RGB LED on the board, connected to the pins of the microcontroller, indicates
 
 ### Examples programming ATTiny microcontroller from command line ( Raspbian OS )
 
-Required install avrdude
+Required install avrdude. The programming of the microcontroller can be performed directly from the CM3 Panel POE microprocessor card through the serial port, using a TTL 3V3 serial adapter.
 
 Ex: sudo apt-get install avrdude
 
