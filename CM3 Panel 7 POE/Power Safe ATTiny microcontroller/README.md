@@ -9,19 +9,19 @@ All information on the operating status of the microprocessor board is sent thro
 
 An RGB LED on the board, connected to the pins of the microcontroller, indicates the state of charge of the supecapacitor.
 
-## Examples programming ATTiny microcontroller from command line ( Raspbian OS )
+### Examples programming ATTiny microcontroller from command line ( Raspbian OS )
 
 Required install avrdude
 
 Ex: sudo apt-get install avrdude
 
-## Flash Optiboot bootloader width Atmel ICE
+### Flash Optiboot bootloader width Atmel ICE
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -catmelice_isp -Pusb -e -Uefuse:w:0xfe:m -Uhfuse:w:0b11010111:m -Ulfuse:w:0xE2:m -Uflash:w:optiboot_attiny88_8000000L.hex:i 
 
 ## Programming Bootloader with USBTiny
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -cusbtiny -e -Uefuse:w:0xfe:m -Uhfuse:w:0b11010111:m -Ulfuse:w:0xE2:m -Uflash:w:optiboot_attiny88_8000000L.hex:i 
 
-## Programming PowerSafe with USBTiny
+### Programming PowerSafe with USBTiny
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -cusbtiny -e -Uefuse:w:0xfe:m -Uhfuse:w:0b11010111:m -Ulfuse:w:0xE2:m -Uflash:w:CM3POE7_12.9.hex:i
 
 ## Programming PowerSafe with USB0 serial port adapter
@@ -50,13 +50,13 @@ Do not press the reset button of the microcontroller while the board is running.
 
 The firmware on the microcontroller was set as follows:
 
-## Changing the AUTOMATIC / MANUAL operating mode:
+### Changing the AUTOMATIC / MANUAL operating mode:
 
 JUMPER JPROG BYPASS = OPEN
 
 JUMPER Supercap in CHG position
 
-## The board must be off and the RGB LED must NOT flash.
+### The board must be off and the RGB LED must NOT flash.
 Press and hold the P2 button and power up the card. The LED will emit a RED light for a few seconds, release the button P2. This situation will indicate that the card operating mode will be in MANUAL. The RGB led will start blinking indicating the state of charge of the Supercap, once charged, the board must be switched on manually as follows indicated.
 
 JUMPER JPROG BYPASS = OPEN
