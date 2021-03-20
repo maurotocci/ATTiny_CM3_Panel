@@ -53,12 +53,14 @@ The firmware on the microcontroller was set as follows:
 ## Changing the AUTOMATIC / MANUAL operating mode:
 
 JUMPER JPROG BYPASS = OPEN
+
 JUMPER Supercap in CHG position
 
 ## The board must be off and the RGB LED must NOT flash.
 Press and hold the P2 button and power up the card. The LED will emit a RED light for a few seconds, release the button P2. This situation will indicate that the card operating mode will be in MANUAL. The RGB led will start blinking indicating the state of charge of the Supercap, once charged, the board must be switched on manually as follows indicated.
 
 JUMPER JPROG BYPASS = OPEN
+
 JUMPER Supercap in CHG position
 
 To switch to AUTOMATIC mode instead, the board must always be off and the RGB LED must NOT flash.
