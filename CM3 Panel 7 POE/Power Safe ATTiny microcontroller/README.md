@@ -27,7 +27,7 @@ $ sudo avrdude -Cavrdude.conf -v -pattiny88 -cusbtiny -e -Uefuse:w:0xfe:m -Uhfus
 ## Programming PowerSafe with USB0 serial port adapter
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D -Uflash:w:CM3POE7_12.9.hex:i
 
-### Description of the functions contained in the firmware 12.9
+## Description of the functions contained in the firmware 12.9
 
 The Power Safe function is managed through an ATTiny microcontroller. The latter communicates with the microprocessor via GPIO lines CM3. The micro takes measurements of all power stages of the CME Panel 7 at 1 second intervals to ensure through the supercap the correct shutdown of the board in the event of a power failure.
 
@@ -69,5 +69,35 @@ P2. This situation will indicate that the card operating mode will be in AUTOMAT
 indicating the state of charge of the Supercap, once charged, the card will turn on automatically.
 
 
+## Development and test environment mode.
 
+
+The card has 2 JUMPERS, JPROG BYPASS and one near the supercap with 2 positions, CHG (supercap connected) and DCHG (download
+supercap).
+In the development, test environment, the Power Safe control can be disabled as follows:
+Remove the supercap JUMPER, insert the jumper on JPROG BYPASS and power the board. The same, it will leave immediately
+without carrying out automatic shutdown in the event of a power failure. However, the microcontroller continues to manage the circuit
+power supply of the display and if it is not present, turn off the relative power supply.
+
+
+## Power Safe mode ACTIVE.
+
+JUMPER JPROG BYPASS = OPEN
+
+JUMPER Supercap in CHG position
+
+In this mode, the card when the RGB LED is powered emits the GREEN color for one second which indicates the fully automatic operation, 
+
+Then flashes indicating the state of charge of the Supercap and more precisely:
+
+Supercap voltage <1.5V = RED
+Supercap voltage between 1.5V and <2.2V = MAGENTA
+Supercap voltage between 2.2V and <2.4V = BLUE
+Supercap voltage> = 2.4 V = GREEN
+
+When the voltage> = 2.4 V on supercap is reached, the power supply circuit CM3 is activated:
+
+GREEN blinking continues until boot is complete and then blinks faster in the same color. Lacking
+power supply, the board switches off automatically by carrying out automatic shutdown. When the power returns, it switches on again
+automatically.
 
