@@ -15,16 +15,16 @@ Required install avrdude
 
 Ex: sudo apt-get install avrdude
 
-# Flash Optiboot bootloader width Atmel ICE
+## Flash Optiboot bootloader width Atmel ICE
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -catmelice_isp -Pusb -e -Uefuse:w:0xfe:m -Uhfuse:w:0b11010111:m -Ulfuse:w:0xE2:m -Uflash:w:optiboot_attiny88_8000000L.hex:i 
 
-# Programming Bootloader with USBTiny
+## Programming Bootloader with USBTiny
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -cusbtiny -e -Uefuse:w:0xfe:m -Uhfuse:w:0b11010111:m -Ulfuse:w:0xE2:m -Uflash:w:optiboot_attiny88_8000000L.hex:i 
 
-# Programming PowerSafe with USBTiny
+## Programming PowerSafe with USBTiny
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -cusbtiny -e -Uefuse:w:0xfe:m -Uhfuse:w:0b11010111:m -Ulfuse:w:0xE2:m -Uflash:w:CM3POE7_12.06.hex:i
 
-# Programming PowerSafe with USB0 serial port adapter
+## Programming PowerSafe with USB0 serial port adapter
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D -Uflash:w:CM3POE7_12.06.hex:i
 
 
