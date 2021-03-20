@@ -113,7 +113,9 @@ Supercap voltage <1.5V = RED, Supercap voltage between 1.5V and <2.2V = MAGENTA,
 The board can be turned on only and exclusively through the following events:
 
 By touching the touch screen of the display;
+
 Real Time Clock interrupt signal;
+
 By pressing button P2;
 
 When the board is turned on and the P2 button is pressed, it automatically turns off. This also happens in the event that it comes to lack of external power supply.
@@ -123,9 +125,13 @@ information of all monitored lines.
 
 ### The serial communication parameters are as follows:
 Speed           : 115200 baudrate
+
 Parity          : none
+
 Bits            : 8
+
 Stopbits        : 1
+
 Flow control    : none
 
 
