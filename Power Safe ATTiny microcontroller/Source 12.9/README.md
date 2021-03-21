@@ -10,6 +10,7 @@ Setting chip, File -> Preferences
     <img src="img/02.png" width="80%">
 </p>
 
+Install Board ATTinyCore SpenceKonde.
 
 Tools -> Board, setting ATtiny 48/88 (Optiboot) and clock source 8Mhz internal.
 
