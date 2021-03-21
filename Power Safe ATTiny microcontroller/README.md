@@ -28,7 +28,6 @@ $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D 
 ### Examples USBTiny adapter
 
 <p align="center">
-    <img src="img/usbtiny.jpg" width="100%">
-  </a>
+    <img src="img/usbtiny.jpg" width="50%">
 </p>
 
