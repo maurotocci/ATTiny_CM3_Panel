@@ -11,4 +11,7 @@ Setting chip, File -> Preferences
 </p>
 
 
+Tools -> Board, setting ATtiny 48/88 (Optiboot) and clock source 8Mhz internal.
+
+
 
