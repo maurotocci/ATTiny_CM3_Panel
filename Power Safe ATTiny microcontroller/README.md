@@ -11,7 +11,7 @@
 
 Required install avrdude. The programming of the microcontroller can be performed directly from the CM3 Panel POE microprocessor board through the serial port, using a TTL 3V3 serial adapter.
 
-Ex: sudo apt-get install avrdude
+Ex: <h4>sudo apt-get install avrdude</h4>
 
 ### Flash Optiboot bootloader width Atmel ICE
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -catmelice_isp -Pusb -e -Uefuse:w:0xfe:m -Uhfuse:w:0b11010111:m -Ulfuse:w:0xE2:m -Uflash:w:optiboot_attiny88_8000000L.hex:i 
