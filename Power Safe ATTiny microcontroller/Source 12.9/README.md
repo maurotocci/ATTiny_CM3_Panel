@@ -29,4 +29,14 @@ At the end of the programming, the RGB LED on the board will indicate the operat
 
 During programming, the display of the board turns off because it is controlled by the microcontroller. The data on the board status and the voltages in mV of all the board's power supply stages are sent by the microcontroller on the debug serial port of the IDE.
 
+### The serial communication parameters are as follows:
+Speed           : 115200 baudrate
+
+Parity          : none
+
+Bits            : 8
+
+Stopbits        : 1
+
+Flow control    : none
 
