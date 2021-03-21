@@ -23,5 +23,10 @@ Tools -> Board, setting ATtiny 48/88 (Optiboot) and clock source 8Mhz internal.
 2. Connect serial USB adapter on EXP2 pin connector to serial pin.
 3. Press and hold the button Reset MicroP P3
 4. Lanch the command to flash ATTiny and release immediately the button Reset MicroP P3
+5. Remove jumper BYPASS on Board.
 
 At the end of the programming, the RGB LED on the board will indicate the operating mode and the state of charge of the supercapacitor.
+
+During programming, the display of the board turns off because it is controlled by the microcontroller. The data on the board status and the voltages in mV of all the board's power supply stages are sent by the microcontroller on the debug serial port of the IDE.
+
+
