@@ -1,8 +1,11 @@
-<h3 align="center">Bootstrap</h3>
+<h3 align="center">CM3 Panel 7 POE - ACME Systems Industrial computer module display</h3>
 
-# CM3 Panel 7 POE - ACME Systems Industrial computer module display
+<p align="center">
+  <a href="https://www.acmesystems.it/CM3-PANEL-7-POE/">
+    <img src="https://www.acmesystems.it/www/CM3-PANEL-7-POE/CM3-PANEL-7-POE_2048.jpg" alt="CM3 PAnel 7 POE" width="200" height="165">
+  </a>
+</p>
 
-https://www.acmesystems.it/CM3-PANEL-7-POE
 
 In this area are published the sources of the ATTiny microcontroller which manage, through a supercapacitor, the correct shutdown of the ACME Systems CM3 Panel POE industrial board in case of external power failure. 
 Compared to the previous version of CM3 Panel, the microcontroller also allows the board to operate even without the touch display, for example to be installed on DIN rail supports inside electrical panels.
