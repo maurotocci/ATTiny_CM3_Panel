@@ -1,3 +1,5 @@
+<h3 align="center">Bootstrap</h3>
+
 # CM3 Panel 7 POE - ACME Systems Industrial computer module display
 
 https://www.acmesystems.it/CM3-PANEL-7-POE
