@@ -25,7 +25,7 @@ $ sudo avrdude -Cavrdude.conf -v -pattiny88 -cusbtiny -e -Uefuse:w:0xfe:m -Uhfus
 ### Programming PowerSafe with USB serial port adapter
 $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D -Uflash:w:CM3POE7_12.9.hex:i
 
-### Steps ATTiny programming
+### Steps ATTiny programming ( Source 12.9 directory )
 
 1. Remove jumper SJVCC on USBTiny
 
@@ -37,7 +37,7 @@ $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D 
 3. Power on Board
 4. Lanch the command ./flash_bootloader.sh
 5. Now the boot loader is programmed
-6. Connect USB serial adapter to PC or USB port CM3 Panel (serial port. Ex: /tty/USBO or COM1
+6. Connect USB serial adapter to PC or USB port CM3 Panel ( Serial port. Ex: /tty/USBO or COM1 )
 7. Connect serial USB adapter on EXP2 pin connector
 8. Press and hold the button Reset MicroP P3
 9. Lanch the command ./flash_powersafe.sh and release immediately the button Reset MicroP P3
