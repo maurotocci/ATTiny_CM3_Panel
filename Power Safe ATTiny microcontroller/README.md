@@ -33,7 +33,7 @@ $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D 
     <img src="img/usbtiny.jpg" width="200px">
 </p>
 
-2. Connect the USBTiny on ICSP port board
+2. Connect the USBTiny adapter to PC and connect on ICSP port board
 3. Power on Board
 4. Lanch the command ./flash_bootloader.sh
 5. Now the boot loader is programmed
