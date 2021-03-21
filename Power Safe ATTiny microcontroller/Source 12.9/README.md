@@ -13,10 +13,14 @@ Setting chip, File -> Preferences
 
 Tools -> Board, setting ATtiny 48/88 (Optiboot) and clock source 8Mhz internal.
 
+<p align="center">
+    <img src="img/usbtiny.jpg" width="200px">
+</p>
+
 ### ATTiny programming sequence with Arduino IDE
 
 1. Board active, insert jumper BYPASS on Board and connect the serial port adapter to Pc.
-2. Connect serial USB adapter on EXP2 pin connector to serial pin,
+2. Connect serial USB adapter on EXP2 pin connector to serial pin.
 3. Press and hold the button Reset MicroP P3
 4. Lanch the command to flash ATTiny and release immediately the button Reset MicroP P3
 
