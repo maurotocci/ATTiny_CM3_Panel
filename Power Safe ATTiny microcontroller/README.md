@@ -48,5 +48,49 @@ At the end of the programming, the RGB LED on the board will indicate the operat
 
 The communication on the correct functioning of the Power Safe, between the CM3 Panel and the ATTiny microcontroller takes place through 2 GPIOs, GPIO 25 is used by the ATTiny to notify the microprocessor to carry out the shutdown (LOW), while the GPIO26 (status HIGH) communicates to the ATTiny that it shutdown occurred regularly, consequently ATTiny deactivates the board power supply.
 
+`================================================================================================
+
+  Description :   CM3 Panel 7.3 POE - Power Safe Controller
+  Rev.        :   12.9
+  MCU         :   ATTiny88 - With optiboot bootloader - 8Mhz internal clock
+  Author      :   Mauro Tocci - ACME Systems
+  Last Update :   10 Mar 2021
+
+  ----------------------------------------------------------------------------------------------
+  Var         PRG   ATTiny Pin and description                        CM3 Pin       Active
+  ----------------------------------------------------------------------------------------------
+  GS          0     PD0 30 - Shutdown command to CM3                  25            LOW
+  SHDNDONE    1     PD1 31 - Shutdown done from CM3                   26            HIGH
+  INT1        2     PD2 32 - Interrupt PCF8523 0x68 & APDS9960 0x39                 LOW
+  P2          3     PD3 1  - P2 Button
+  LG          4     PD4 2  - Led Green                                              LOW
+  LR          5     PD5 9  - Led Red                                                LOW
+              6     PD6 10 - AIN0=TX
+              7     PD7 11 - AIN1=RX
+              8     PB0 12 - Free
+              9     PB1 13 - Free
+              10    PB2 14 - Free
+              11    PB3 15 - MOSI
+              12    PB4 16 - MISO
+              13    PB5 17 - SCK
+                        18 - AVCC VREF
+  DON         14    PB6 7  - Display ON                               27            HIGH
+  LB          15    PB7 8  - Led Blue                                               LOW
+  ITD         16    PC7 20 - Interrupt touch display
+              17    PC0 23 - ADC Power 1.8 V
+              18    PC1 24 - ADC Power 3.3 V
+              19    PC2 25 - ADC External 5V
+              20    PC3 26 - ADC Internal 5V
+              21    PC4 27 - SDA
+              22    PC5 28 - SCL
+              23    PA0 19 - ADC Measure current Display
+              24    PA1 22 - ADC Volt Supercap
+  EN5V        25    PA2 3  - Enable internal 5V
+              26    PA3 6  - Free
+              27    PC6 29 - Reset micro
+
+================================================================================================`
+
+
 
 
