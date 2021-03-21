@@ -14,7 +14,7 @@ Setting chip, File -> Preferences
 Tools -> Board, setting ATtiny 48/88 (Optiboot) and clock source 8Mhz internal.
 
 <p align="center">
-    <img src="img/usbtiny.jpg" width="200px">
+    <img src="img/Board.svg" width="80%">
 </p>
 
 ### ATTiny programming sequence with Arduino IDE
