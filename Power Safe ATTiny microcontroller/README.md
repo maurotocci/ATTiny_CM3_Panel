@@ -44,4 +44,9 @@ $ sudo avrdude -Cavrdude.conf -v -pattiny88 -carduino -P/dev/ttyUSB0 -b19200 -D 
 
 At the end of the programming, the RGB LED on the board will indicate the operating mode and the state of charge of the supercapacitor.
 
+## Notes
+
+The communication on the correct functioning of the Power Safe, between the CM3 Panel and the ATTiny microcontroller takes place through 2 GPIOs, GPIO 25 is used by the ATTiny to notify the microprocessor to carry out the shutdown (LOW), while the GPIO26 (stasus HIGH) communicates to the ATTiny that it shutdown occurred regularly, consequently ATTiny deactivates the board power supply.
+
+
 
