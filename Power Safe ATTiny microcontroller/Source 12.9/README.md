@@ -12,7 +12,7 @@ Setting chip, File -> Preferences
 
 Install Tools -> Board Manager the "ATTinyCore SpenceKonde".
 
-Tools -> Board, setting ATtiny 48/88 (Optiboot) and clock source 8Mhz internal.
+Set menu Tools -> Board, setting ATtiny 48/88 (Optiboot) and clock source 8Mhz internal.
 
 <p align="center">
     <img src="img/Board.svg" width="100%">
