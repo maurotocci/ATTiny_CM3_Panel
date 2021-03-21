@@ -1,4 +1,4 @@
-<h3 align="center" style="color: #000ff">CM3 Panel 7 POE - ACME Systems Industrial computer module display</h3>
+<h3 align="center" style="color:#0000ff;">CM3 Panel 7 POE - ACME Systems Industrial computer module display</h3>
 
 <p align="center">
   <a href="https://www.acmesystems.it/CM3-PANEL-7-POE/">
