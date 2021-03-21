@@ -46,7 +46,7 @@ At the end of the programming, the RGB LED on the board will indicate the operat
 
 ## Notes
 
-The communication on the correct functioning of the Power Safe, between the CM3 Panel and the ATTiny microcontroller takes place through 2 GPIOs, GPIO 25 is used by the ATTiny to notify the microprocessor to carry out the shutdown (LOW), while the GPIO26 (stasus HIGH) communicates to the ATTiny that it shutdown occurred regularly, consequently ATTiny deactivates the board power supply.
+The communication on the correct functioning of the Power Safe, between the CM3 Panel and the ATTiny microcontroller takes place through 2 GPIOs, GPIO 25 is used by the ATTiny to notify the microprocessor to carry out the shutdown (LOW), while the GPIO26 (status HIGH) communicates to the ATTiny that it shutdown occurred regularly, consequently ATTiny deactivates the board power supply.
 
 
 
