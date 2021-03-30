@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://www.acmesystems.it/doc_cm3-panel-7-poe">
-    <img src="https://www.acmesystems.it/www/CM3-PANEL-7-POE/CM3-PANEL-7-POE_attiny.svg" alt="CM3 PAnel 7 POE" width="80%">
+    <img src="https://www.acmesystems.it/www/CM3-PANEL-7-POE/CM3-PANEL-7-POE_attiny.svg" alt="CM3 Panel 7 POE" width="80%">
   </a>
 </p>
 
