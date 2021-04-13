@@ -4,6 +4,7 @@
   Description :   CM3 Panel 7.3 POE - Power Safe Controller
   Rev.        :   12.11
   MCU         :   ATTiny88 - With optiboot bootloader - 8Mhz internal clock
+                  B.O.D enabled 2.7V
   Author      :   Mauro Tocci - ACME Systems
   Last Update :   10 Mar 2021
 

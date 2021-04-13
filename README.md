@@ -14,7 +14,7 @@ All information on the operating status of the microprocessor board is sent thro
 
 An RGB LED on the board, connected to the pins of the microcontroller, indicates the state of charge of the supecapacitor.
 
-## Description of the functions contained in the firmware 12.9
+## Description of the functions contained in the Firmware
 
 The Power Safe function is managed through an ATTiny microcontroller. The latter communicates with the microprocessor via GPIO lines CM3. The micro takes measurements of all power stages of the CME Panel 7 at 1 second intervals to ensure through the supercap the correct shutdown of the board in the event of a power failure.
 
