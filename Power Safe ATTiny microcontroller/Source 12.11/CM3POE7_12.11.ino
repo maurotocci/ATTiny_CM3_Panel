@@ -2,7 +2,7 @@
 ================================================================================================
 
   Description :   CM3 Panel 7.3 POE - Power Safe Controller
-  Rev.        :   12.9
+  Rev.        :   12.11
   MCU         :   ATTiny88 - With optiboot bootloader - 8Mhz internal clock
   Author      :   Mauro Tocci - ACME Systems
   Last Update :   10 Mar 2021
@@ -51,7 +51,7 @@
 
 #define DEBUG         true              // Enable debug event to serial port
 const boolean sen   = true;             // Send serial enable
-const char*   fw    = "12.9";           // Firmware version
+const char*   fw    = "12.11";           // Firmware version
 unsigned int  mode;                     // EEPROM Operation Mode: 0 = Manual / 255 = Autostart
 
 // ---------------------------------------------------------------------------------------------
@@ -163,19 +163,19 @@ void setup() {
   // Check change Operative Mode - read/write EEPROM value from address 250 ( Button P2 )
   // ---------------------------------------------------------------------------------------------
 
-    if ( digitalRead(P2) == 0 && EEPROM.read(250) == 0 ) {
-      EEPROM.write(250, 255);
-      digitalWrite(LG, LOW);
-      delay(TM);    
-    }
+    mode = EEPROM.read(60);
 
-    if ( digitalRead(P2) == 0 && EEPROM.read(250) == 255 ) {
-      EEPROM.write(250, 0);
-      digitalWrite(LB, LOW);
-      delay(TM);    
+    if ( digitalRead(P2) == 0 ) {
+      if ( mode == 0 ) {
+        EEPROM.write(60, 255);
+        digitalWrite(LG, LOW);
+        delay(TM);    
+      } else {
+        EEPROM.write(60, 0);
+        digitalWrite(LB, LOW);
+        delay(TM);    
+      } 
     }
-
-    mode = EEPROM.read(250);
 
     if ( mode == 0 ) {
       opm = "MAN";
@@ -200,17 +200,17 @@ void setup() {
 
     Serial.print(" ChipID:");
   
-    if ( EEPROM.read(100) <= 16 ) {
+    if ( EEPROM.read(50) <= 16 ) {
       Serial.print(0);
     }    
 
-    Serial.print(EEPROM.read(100),HEX);
+    Serial.print(EEPROM.read(50),HEX);
 
-    if ( EEPROM.read(200) <= 16 ) {
+    if ( EEPROM.read(51) <= 16 ) {
       Serial.print(0);
     }    
 
-    Serial.print(EEPROM.read(200),HEX);
+    Serial.print(EEPROM.read(51),HEX);
 
     Serial.print(" Operating Mode:");
     Serial.println(opm);
