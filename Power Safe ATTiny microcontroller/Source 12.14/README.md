@@ -33,8 +33,12 @@ During programming, the display of the board turns off because it is controlled 
 ### The serial communication parameters are as follows:
 
 Speed           : 19200 baudrate
+
 Parity          : none
+
 Bits            : 8
+
 Stopbits        : 1
+
 Flow control    : none
 
