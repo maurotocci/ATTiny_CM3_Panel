@@ -1,12 +1,14 @@
 /*
 ================================================================================================
 
-  Description :   CM3 Panel 7.3 POE - Power Safe Controller
-  Rev.        :   12.11
-  MCU         :   ATTiny88 - With optiboot bootloader - 8Mhz internal clock
-                  B.O.D enabled 2.7V
-  Author      :   Mauro Tocci - ACME Systems
-  Last Update :   10 Mar 2021
+  Description     :   CM3 Panel 7.3 POE - Power Safe Controller
+  Firmware        :   V. 12.14
+  MCU             :   ATTiny88 - With optiboot bootloader - Set to 4 Mhz internal clock
+                      B.O.D enabled 2.7V
+
+  Serial settings :   19200 baud                  
+  Author          :   Mauro Tocci - ACME Systems
+  Last Update     :   April 2021
 
   ----------------------------------------------------------------------------------------------
   Var         PRG   ATTiny Pin and description                        CM3 Pin       Active
@@ -52,8 +54,8 @@
 
 #define DEBUG         true              // Enable debug event to serial port
 const boolean sen   = true;             // Send serial enable
-const char*   fw    = "12.11";           // Firmware version
-unsigned int  mode;                     // EEPROM Operation Mode: 0 = Manual / 255 = Autostart
+const char*   fw    = "12.14";          // Firmware version
+unsigned int  mode;                     // EEPROM Operation Mode: < 255 = Manual / 255 = Autostart
 
 // ---------------------------------------------------------------------------------------------
 // Pin Output
@@ -95,7 +97,7 @@ const unsigned int RmVSC      = 1500;     // Led Red supercap minimum voltage th
 // Serial port settings
 // ---------------------------------------------------------------------------------------------
 # if DEBUG
-  #define vb  115200          // Serial baud (Tested up to 115200)
+  #define vb  19200          // Serial baud (Tested up to 115200 at 8 Mhz)
 # endif
 
 // ---------------------------------------------------------------------------------------------
@@ -111,6 +113,8 @@ unsigned int TD           = 2000;   // Loop millisecond interrupt display
 
 unsigned long int D1;
 unsigned int TD1          = 1000;   // Loop millisecond display connected check
+
+unsigned int ETM          = 500;    // Pause in millisecond read EEPROM register
 
 // ---------------------------------------------------------------------------------------------
 // Set Timer Parameters
@@ -155,51 +159,58 @@ void setup() {
 
   pinMode(SHDNDONE,     INPUT_PULLUP);  // Set pullup - Confirm that the CM3 has been turned off
   pinMode(INT1,         INPUT);
-  pinMode(P2,           INPUT);
+  pinMode(P2,           INPUT_PULLUP);  // Change to pullup April 2021
 
-  pinMode(DON,          OUTPUT);
+  pinMode(DON,          OUTPUT);        // GPIO Display ON
   digitalWrite(DON,     LOW);
 
-  // ---------------------------------------------------------------------------------------------
-  // Check change Operative Mode - read/write EEPROM value from address 250 ( Button P2 )
-  // ---------------------------------------------------------------------------------------------
-
-    mode = EEPROM.read(60);
-
-    if ( digitalRead(P2) == 0 ) {
-      if ( mode == 0 ) {
-        EEPROM.write(60, 255);
-        digitalWrite(LG, LOW);
-        delay(TM);    
-      } else {
-        EEPROM.write(60, 0);
-        digitalWrite(LB, LOW);
-        delay(TM);    
-      } 
-    }
-
-    if ( mode == 0 ) {
-      opm = "MAN";
-      digitalWrite(LB, LOW);
-      delay(TM);    
-    }    
-
-    if ( mode == 255 ) {
-      opm = "AUTO";
-      digitalWrite(LG, LOW);
-      delay(TM);    
-    }    
-    
   // ------------------------------------------------------------------------------- 
   # if DEBUG
   // ------------------------------------------------------------------------------- 
     Serial.begin(vb);
     delay(250);
+    Serial.flush();
+
+    // ---------------------------------------------------------------------------------------------
+    // Check change Operative Mode - read/write EEPROM value from address 60 ( Button P2 )
+    // ---------------------------------------------------------------------------------------------
+    mode = EEPROM.read(60);
+    delay(250);
+
+    if ( digitalRead(P2) == 0 ) {
+      if ( mode == 255 ) {
+        EEPROM.write(60, 0);
+        digitalWrite(LB, LOW);
+        mode = 0;
+        delay(ETM);    
+      } else {
+        EEPROM.write(60, 255);
+        digitalWrite(LG, LOW);
+        mode = 255;
+        delay(ETM);    
+      } 
+    }
+    
+    Serial.flush();
+
+    if ( mode == 0 ) {
+      opm = "MAN";
+      digitalWrite(LB, LOW);
+      delay(ETM);    
+    }    
+
+    if ( mode == 255 ) {
+      opm = "AUTO";
+      digitalWrite(LG, LOW);
+      delay(ETM);    
+    }    
+    
     Serial.println();
     Serial.print("ACME Systems - Firmware:");
     Serial.print(fw);
 
     Serial.print(" ChipID:");
+    Serial.flush();
   
     if ( EEPROM.read(50) <= 16 ) {
       Serial.print(0);
@@ -215,9 +226,9 @@ void setup() {
 
     Serial.print(" Operating Mode:");
     Serial.println(opm);
-    
+
+    delay(250);
     Serial.flush();
-    delay(1000);
     
     title();
   # endif
