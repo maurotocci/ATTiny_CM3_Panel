@@ -120,9 +120,13 @@ From the project calculations, and from the stress tests performed, the use of a
 ### The serial communication parameters are as follows:
 
 Speed           : 19200 baudrate
+
 Parity          : none
+
 Bits            : 8
+
 Stopbits        : 1
+
 Flow control    : none
 
 
