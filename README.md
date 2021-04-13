@@ -118,14 +118,11 @@ The tests performed in the ACME Systems laboratories were performed on the 2020-
 From the project calculations, and from the stress tests performed, the use of a 30 F supercap guarantees that even when there is a power failure during boot, the mocrocontroller is able to perform the automatic shutdown of the board regularly.
 
 ### The serial communication parameters are as follows:
-Speed           : 115200 baudrate
 
+Speed           : 19200 baudrate
 Parity          : none
-
 Bits            : 8
-
 Stopbits        : 1
-
 Flow control    : none
 
 
