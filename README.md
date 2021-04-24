@@ -78,7 +78,7 @@ In this mode, the board when the RGB LED is powered emits the GREEN color for on
 
 Then flashes indicating the state of charge of the Supercap and more precisely:
 
-Supercap voltage <1.5V = RED, Supercap voltage between 1.5V and <2.2V = MAGENTA, Supercap voltage between 2.2V and <2.4V = BLUE, Supercap voltage> = 2.4 V = GREEN.
+Supercap voltage <1.5V = RED, Supercap voltage between 1.5V and <2.2V = MAGENTA, Supercap voltage between 2.2V and <2.4V = BLUE, Supercap voltage> = 2.4 V and CM3 boot regularly = GREEN.
 
 When the voltage> = 2.4 V on supercap is reached, the power supply circuit CM3 is activated:
 
