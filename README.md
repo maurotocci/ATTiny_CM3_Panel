@@ -115,7 +115,7 @@ information of all monitored lines.
 
 The tests performed in the ACME Systems laboratories were performed on the 2020-12-02-raspios-buster-armhf-lite operating system version with Node Red, XORG and Google Chrome installed. In the Desktop version, the board demonstrated faster shutdown times than in the Lite version.
 
-From the project calculations, and from the stress tests performed, the use of a 30 F supercap guarantees that even when there is a power failure during boot, the mocrocontroller is able to perform the automatic shutdown of the board regularly.
+From the project calculations, and from the stress tests performed, the use of a 30 F supercap guarantees that even when there is a power failure during boot, the microcontroller is able to perform the automatic shutdown of the board regularly.
 
 ### The serial communication parameters are as follows:
 
