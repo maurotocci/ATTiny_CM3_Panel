@@ -45,7 +45,7 @@ JUMPER JPROG BYPASS = OPEN
 JUMPER Supercap in CHG position
 
 ### The board must be off and the RGB LED must NOT flash.
-Press and hold the P2 button and power on board. The LED will emit a RED light for a few seconds, release the button P2. This situation will indicate that the board operating mode will be in MANUAL. The RGB led will start blinking indicating the state of charge of the Supercap, once charged, the board must be switched on manually as follows indicated.
+Press and hold the P2 button and power on board. The LED will emit a BLUE light for a few seconds, release the button P2. This situation will indicate that the board operating mode will be in MANUAL. The RGB led will start blinking indicating the state of charge of the Supercap, once charged, the board must be switched on manually as follows indicated.
 
 JUMPER JPROG BYPASS = OPEN
 
@@ -92,7 +92,7 @@ JUMPER JPROG BYPASS = OPEN
 
 JUMPER Supercap in CHG position
 
-In this mode, when the board is powered, the RGB LED emits the RED color for one second which indicates the MANUAL operation, then flashes indicating the state of charge of the Supercap and more precisely:
+In this mode, when the board is powered, the RGB LED emits the BLUE color for one second which indicates the MANUAL operation, then flashes indicating the state of charge of the Supercap and more precisely:
 
 Tab Off:
 
